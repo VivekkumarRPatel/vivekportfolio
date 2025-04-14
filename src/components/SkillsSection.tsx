@@ -57,7 +57,7 @@ const SkillsSection = () => {
     {
       title: "Tools & Version Control",
       icon: <Wrench className="h-10 w-10" />,
-      skills: ["SonarQube", "JIRA", "Postman", "Maven", "Jenkins", "Git", "Confluence","JSON", "Tomcat","GitHub"],
+      skills: ["SonarQube", "JIRA", "Postman", "Maven", "Jenkins", "Git", "Confluence","JSON", "Apache Tomcat","GitHub","WebLogic"],
       delay: 0.2
     },
     {
