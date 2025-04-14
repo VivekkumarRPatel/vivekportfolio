@@ -2,6 +2,7 @@
 import { useState, useEffect } from 'react';
 import { Code, Layers, Server, Users } from 'lucide-react';
 import { Card, CardContent } from "@/components/ui/card";
+import { Database,Cloud,Wrench,Brain   } from "lucide-react";
 
 const SkillsSection = () => {
   const [animationTriggered, setAnimationTriggered] = useState(false);
@@ -32,26 +33,44 @@ const SkillsSection = () => {
     {
       title: "Programming Languages",
       icon: <Code className="h-10 w-10" />,
-      skills: ["JavaScript", "TypeScript", "Python", "Java", "C++", "HTML", "CSS"],
-      delay: 0
+      skills: ["Java","JavaScript", "TypeScript", "HTML", "CSS"],
+      delay: 0.2
     },
     {
       title: "Frameworks & Libraries",
       icon: <Layers className="h-10 w-10" />,
-      skills: ["React", "Angular", "Vue.js", "Node.js", "Express", "Django", "Flask"],
+      skills: ["Spring", "Angular", "Hibernate", "Node.js", "Express", "REST APIS"],
       delay: 0.2
     },
     {
-      title: "Tools & Platforms",
-      icon: <Server className="h-10 w-10" />,
-      skills: ["Git", "Docker", "AWS", "Azure", "MongoDB", "PostgreSQL", "Firebase"],
-      delay: 0.4
+      title: "Database",
+      icon: <Database className="h-10 w-10" />,
+      skills: ["MySQL", "MongoDB", "Oracle", "DynamoDB"],
+      delay: 0.2
+    },
+    {
+      title: "Cloud & DevOps",
+      icon: <Cloud className="h-10 w-10" />,
+      skills: ["AWS", "Docker", "CI/CD"],
+      delay: 0.2
+    },
+    {
+      title: "Tools & Version Control",
+      icon: <Wrench className="h-10 w-10" />,
+      skills: ["SonarQube", "JIRA", "Postman", "Maven", "Jenkins", "Git", "Confluence","JSON", "Tomcat","GitHub"],
+      delay: 0.2
+    },
+    {
+      title: "Concept & Practices",
+      icon: <Brain className="h-10 w-10" />,
+      skills: ["SOLID Principles", "Test Driven Development (TDD)", "Design Patterns", "Object Oriented Programming"],
+      delay: 0.2
     },
     {
       title: "Soft/Collaboration Skills",
       icon: <Users className="h-10 w-10" />,
       skills: ["Team Leadership", "Communication", "Problem Solving", "Agile Methodology", "Project Management"],
-      delay: 0.6
+      delay: 0.2
     }
   ];
 
@@ -73,7 +92,8 @@ const SkillsSection = () => {
               style={{
                 opacity: animationTriggered ? 1 : 0,
                 transform: animationTriggered ? 'translateY(0)' : 'translateY(20px)',
-                transition: `all 0.5s ease ${category.delay}s`
+                transition: `all 0.5s ease ${category.delay}s`,
+                boxShadow: animationTriggered ? '0 4px 10px rgba(0, 0, 0, 0.3)' : 'none',
               }}
             >
               <CardContent className="p-6">

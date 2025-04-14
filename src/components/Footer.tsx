@@ -16,7 +16,7 @@ const Footer = () => {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col md:flex-row justify-between items-center">
           <div className="mb-6 md:mb-0">
-            <h3 className="text-xl font-bold mb-2 text-primary">Your Name</h3>
+            <h3 className="text-xl font-bold mb-2 text-primary">Vivekkumar Patel</h3>
             <p className="text-muted-foreground">Portfolio & Personal Showcase</p>
           </div>
           
@@ -30,7 +30,7 @@ const Footer = () => {
             </button>
             
             <p className="text-sm text-muted-foreground">
-              © {currentYear} Your Name. All rights reserved.
+              © {currentYear} Vivekkumar Patel. All rights reserved.
             </p>
           </div>
         </div>

@@ -51,20 +51,20 @@ const Navbar = () => {
               <button onClick={() => scrollToSection('journey')} className="nav-link">
                 Journey
               </button>
+              <button onClick={() => scrollToSection('experience')} className="nav-link">
+                Experience & Edu
+              </button>
               <button onClick={() => scrollToSection('skills')} className="nav-link">
                 Skills
               </button>
               <button onClick={() => scrollToSection('projects')} className="nav-link">
                 Projects
               </button>
-              <button onClick={() => scrollToSection('contact')} className="nav-link">
-                Contact
-              </button>
             </div>
           </div>
           
           {/* Contact button */}
-          <div className="hidden md:block">
+          {/* <div className="hidden md:block">
             <Button
               onClick={() => scrollToSection('contact')}
               className="bg-primary hover:bg-primary/80 text-white"
@@ -72,7 +72,7 @@ const Navbar = () => {
               Let's Talk
             </Button>
           </div>
-          
+           */}
           {/* Mobile menu button */}
           <div className="md:hidden">
             <button
@@ -108,6 +108,12 @@ const Navbar = () => {
               Journey
             </button>
             <button 
+              onClick={() => scrollToSection('experience')}
+              className="block px-3 py-2 rounded-md w-full text-left hover:bg-accent"
+            >
+              Experience & Edu
+            </button>
+            <button 
               onClick={() => scrollToSection('skills')}
               className="block px-3 py-2 rounded-md w-full text-left hover:bg-accent"
             >
@@ -119,18 +125,18 @@ const Navbar = () => {
             >
               Projects
             </button>
-            <button 
+            {/* <button 
               onClick={() => scrollToSection('contact')}
               className="block px-3 py-2 rounded-md w-full text-left hover:bg-accent"
             >
               Contact
-            </button>
-            <Button
+            </button> */}
+            {/* <Button
               onClick={() => scrollToSection('contact')}
               className="bg-primary hover:bg-primary/80 text-white w-full mt-4"
             >
               Let's Talk
-            </Button>
+            </Button> */}
           </div>
         </div>
       )}

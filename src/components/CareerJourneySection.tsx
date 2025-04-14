@@ -31,48 +31,54 @@ const CareerJourneySection = () => {
     { 
       id: 1, 
       title: 'Undergrad',
-      subtitle: 'University Name',
-      year: '2015 - 2019',
+      subtitle: 'GTU',
+      link: 'https://www.gtu.ac.in/',
+      year: 'Sep 2014 - June 2018',
       icon: <GraduationCap className="h-8 w-8" />,
       delay: 0.1
     },
     { 
       id: 2, 
       title: 'Internship',
-      subtitle: 'Company Name',
-      year: '2019',
+      subtitle: 'Spec India',
+      link: 'https://www.spec-india.com/',
+      year: 'Jan 2018 - June 2018',
       icon: <BookOpen className="h-8 w-8" />,
       delay: 0.3
     },
     { 
       id: 3, 
       title: 'Full-time Job',
-      subtitle: 'Company Name',
-      year: '2019 - 2021',
+      subtitle: 'Spec India',
+      link: 'https://www.spec-india.com/',
+      year: 'July 2018 - Aug 2021',
       icon: <Briefcase className="h-8 w-8" />,
       delay: 0.5
     },
     { 
       id: 4, 
       title: "Master's",
-      subtitle: 'University Name',
-      year: '2021 - 2022',
+      subtitle: 'Dalhousie University',
+      link: 'https://www.dal.ca/',
+      year: 'Sep 2021 - April 2023',
       icon: <GraduationCap className="h-8 w-8" />,
       delay: 0.7
     },
     { 
       id: 5, 
       title: 'Internship',
-      subtitle: 'Company Name',
-      year: '2022',
+      subtitle: 'Canada Revenue Agency',
+      link: 'https://www.canada.ca/en/revenue-agency.html',
+      year: 'Jan 2023 - April 2023',
       icon: <BookOpen className="h-8 w-8" />,
       delay: 0.9
     },
     { 
       id: 6, 
       title: 'Full-time Job',
-      subtitle: 'Company Name',
-      year: '2022 - Present',
+      subtitle: 'Canada Revenue Agency',
+      link: 'https://www.canada.ca/en/revenue-agency.html',
+      year: 'May 2023 - Mar 2025',
       icon: <Briefcase className="h-8 w-8" />,
       delay: 1.1
     }
@@ -96,8 +102,15 @@ const CareerJourneySection = () => {
                 opacity: 0,
                 animationDelay: `${step.delay}s`
               }}>
-                <div className="w-20 h-20 rounded-full bg-white shadow-lg flex items-center justify-center mb-4 border border-accent">
-                  <div className="w-16 h-16 rounded-full bg-secondary flex items-center justify-center">
+                <div className="w-20 h-20 rounded-full bg-white shadow-lg flex items-center justify-center mb-4 border border-accent cursor-pointer group transition-transform hover:rotate-12 hover:scale-110"
+                  onClick={() => {
+                    const subtitleEl = document.getElementById(`subtitle-${step.id}`);
+                    if (subtitleEl) {
+                      subtitleEl.classList.add('animate-ping-once');
+                      setTimeout(() => subtitleEl.classList.remove('animate-ping-once'), 500);
+                    }
+                  }}>
+                  <div className="w-16 h-16 rounded-full bg-secondary flex items-center justify-center transition-transform group-hover:scale-110 group-hover:animate-bounce">
                     <div className="text-primary">
                       {step.icon}
                     </div>
@@ -105,7 +118,9 @@ const CareerJourneySection = () => {
                 </div>
                 <div className="w-32 text-center">
                   <h4 className="font-bold">{step.title}</h4>
-                  <p className="text-sm text-muted-foreground">{step.subtitle}</p>
+                  <p id={`subtitle-${step.id}`} className="text-sm text-muted-foreground transition-transform"> 
+                  <a  href={step.link}  target="_blank" rel="noopener noreferrer" className="hover:underline  text-inherit">    
+                    {step.subtitle}</a></p>
                   <p className="text-xs font-medium text-primary mt-1">{step.year}</p>
                 </div>
                 
@@ -149,7 +164,9 @@ const CareerJourneySection = () => {
                       </div>
                       <div>
                         <h4 className="font-bold text-lg">{step.title}</h4>
-                        <p className="text-sm text-muted-foreground">{step.subtitle}</p>
+                        <p id={`subtitle-${step.id}`} className="text-sm text-muted-foreground transition-transform">
+                          <a  href={step.link} target="_blank" rel="noopener noreferrer" className="hover:underline  text-inherit">
+                          {step.subtitle}</a></p>
                       </div>
                     </div>
                     <p className="text-sm font-medium text-primary">{step.year}</p>
